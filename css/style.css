@@ -1,0 +1,1273 @@
+:root {
+
+  /* Farver */
+
+  --blue: #0f1972;
+  --grey: #f0f0f0;
+
+  /* Font */
+
+  --halcom: "halcom", sans-serif;
+}
+
+/********** Html og body **********/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--grey);
+  font-size: 16px;
+  font-family: var(--halcom);
+  overflow: overlay;
+  overflow-x: hidden;
+}
+
+/********** Scrollbar **********/
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 200px;
+}
+
+
+/********** Navigation + Header **********/
+
+header {
+  background-color: white;
+  box-shadow: 0 0 30px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: block;
+  margin: 15px 0 15px 20px;
+  height: 50px;
+  text-decoration: none;
+}
+
+.logo svg{
+  height: 100%;
+  width: auto;
+}
+
+/********** Menulinje på mobil (brugermenu) **********/
+
+.burger {
+  margin-bottom: 0;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.burger .menu {
+  position: absolute;
+  box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.05);
+  background-color: var(--grey);
+  display: none;
+  flex-direction: column;
+  width: 100vw;
+  left: 0;
+  top: 100%;
+  padding-bottom: 20px;
+  overflow-x: hidden;
+}
+
+.menu ul{
+    list-style-type: none;
+    list-style-position: inside;
+    margin-left: -40px;
+    margin-top: 20px;
+}
+
+.bookdropdown{
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: var(--blue);
+    border-radius: 200px;
+    font-weight: 400;
+    padding: 5px 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bookdropdown:hover {
+    background-color: white;
+    color: var(--blue);
+  }
+
+.menu li a{
+    display: block;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    width: 70vw;
+    padding: 5px 2rem 5px 20px;
+}
+.menu li a:last-child{
+    margin-right: 20px;
+    padding-right: 0;
+    width: 100vw;
+}
+.menu li a:hover{
+    background-color: var(--blue);
+    color: white;
+}
+
+.menuicon {
+    position: absolute;
+    right: 0;
+    top: 23px;
+    width: 34px;
+    margin: 0;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.menu li {
+  position: relative;
+    text-align: left;
+    margin-bottom: 45px;
+}
+.menu li:last-child{
+    margin-bottom: 20px;
+}
+.arrow{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    padding: 0 !important;
+    margin: 0 28px 0 0;
+    color: var(--blue);
+    transition: 0.1s;
+    cursor: pointer;
+}
+.dropmenu::before{
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  top: 0px;
+  right: 10px;
+}
+.dropdown{
+  width: 100vw;
+  display: none;
+  background-color: var(--blue);
+  padding-top: 10px;
+  padding-bottom: 5px;
+  overflow-y: scroll;
+}
+.dropdown li{
+  margin-bottom: 15px;
+  margin-right: 45px;
+}
+.dropdown li a{
+    display: block;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 300;
+    width: 70vw!important;
+    padding: 5px 0 5px 20px !important;
+}
+.dropdown li a:hover{
+  color: var(--blue);
+  background-color: white;
+}
+
+/********** Menulinje på desktop **********/
+
+.widemenu{
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-right: 20px;
+}
+.navbar{
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.menupunkter{
+  display: inline-block;
+  margin: 0;
+}
+.menupunkter a{
+  text-decoration: none;
+  color: var(--blue);
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 5px 10px;
+}
+.menupunkter:hover > a{
+  background-color: var(--blue);
+  color: white;
+}
+.widedropmenu{
+  display: none;
+}
+.book{
+  margin-left: auto;
+  width: 195px;
+  display: block;
+}
+.booking{
+  float: right;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: white;
+  background-color: var(--blue);
+  padding: 8px 10px;
+  border-radius: 30px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.book a:hover, .bookfollow a:hover{
+  outline: 1px solid var(--blue);
+  background-color: white;
+  color: var(--blue);
+}
+
+/********** Classes for Javascript **********/
+
+.arrowactive{
+  transform: rotateZ(90deg);
+  transition: 0.2s;
+}
+.dropdownactive{
+  display: block;
+}
+.topline{
+  transform-origin: right;
+  transition: 0.2s;
+}
+.midline{
+  transition: 0.2s;
+}
+.botline{
+  transform-origin: right;
+  transition: 0.2s;
+}
+
+.topon{
+  animation: menutopanim 0.2s linear 0.1s forwards;
+}
+.midon{
+  animation: menumidanim 0.1s linear forwards;
+}
+.boton{
+  animation: menubotanim 0.2s linear 0.1s forwards;
+}
+
+.topoff{
+  animation: topoutanim 0.2s linear forwards;
+}
+.midoff{
+  transform: scaleX(0);
+  animation: midoutanim 0.1s linear 0.1s forwards;
+}
+.botoff{
+  animation: botoutanim 0.2s linear forwards;
+}
+
+/********** Burgermenu animationer **********/
+
+@keyframes menutopanim {
+  from{transform: translateY(0%) rotateZ(0deg);}
+  to{transform: translateY(-3px) rotateZ(-45deg);}
+}
+
+@keyframes menumidanim {
+  from{transform: scaleX(1);}
+  to{transform: scaleX(0);}
+}
+@keyframes menubotanim {
+  from{transform: translateY(0%) rotateZ(0deg);}
+  to{transform: translateY(8px) rotateZ(45deg);}
+}
+@keyframes topoutanim {
+  from{transform: translateY(-3px) rotateZ(-45deg);}
+  to{transform: translateY(0%) rotateZ(0deg);}
+}
+@keyframes midoutanim {
+  from{
+    transform: scaleX(0);}
+  to{transform: scaleX(1);}
+}
+@keyframes botoutanim {
+  from{transform: translateY(8px) rotateZ(45deg);}
+  to{transform: translateY(0%) rotateZ(0deg);}
+}
+
+/********** Forside **********/
+
+#forside{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero1 {
+  background-image: linear-gradient(rgba(0, 0, 200, 0.02), rgba(87, 87, 172, 0.6)), url("../images/bowle1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100vw;
+  height: 30vw;
+  min-height: 250px;
+  max-height: 350px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0 0 20px 20px;
+  z-index: 2;
+}
+
+.hero1 a{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  background-color: var(--blue);
+  border-radius: 200px;
+  box-shadow: 0 0 40px 0px rgba(255, 255, 255, 0.3);
+  margin-bottom: auto;
+  padding: 5px 15px 5px 15px;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  text-align: center;
+  margin: auto 0;
+  max-width: 10ch;
+  font-size: 2.8rem;
+}
+.hero1 a:hover {
+  background-color: white;
+  color: var(--blue);
+}
+
+.previewcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bookfollow{
+  margin: 0;
+  padding: 0;
+  margin-bottom: auto;
+  position: fixed;
+  height: auto;
+  top: 20px;
+  right: 20px;
+}
+.bookfollow a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.1rem;
+  background-color: var(--blue);
+  box-shadow: 0 0 40px 0px rgba(255, 255, 255, 0.3);
+  padding: 8px 10px;
+  border-radius: 30px;
+  font-weight: 400;
+}
+
+/********** Parkering på forside **********/
+
+.parkering {
+    background: #f0f0f0;
+    background-image: 
+    linear-gradient(rgba(240, 240, 240, 0.9), 
+    rgba(240, 240, 240, 0.9)), url("../images/bil.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    width: fit-content;
+    margin: 20px;
+    padding: 20px 0;
+}
+
+.parkering h2 {
+  color: var(--blue);
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0 auto;
+}
+.parkering h3 {
+  color: var(--blue);
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/********** Previews på forside **********/
+
+.previewcontainer{
+  height: 100%;
+}
+.power, .buffet {
+  background-image: linear-gradient(rgba(126, 126, 126, 0.1), rgba(25, 25, 54, 0.8)), url("../images/powerpreview.webp");
+  width: 100vw;
+  height: 100vw;
+  max-height: 350px;
+  max-width: 350px;
+  margin: 0;
+  margin-bottom: 15vw;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: 50% 50%; 
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 0 30px -15px black;
+}
+.buffet {
+  background-image: linear-gradient(rgba(126, 126, 126, 0.1), rgba(25, 25, 54, 0.8)), url("../images/bowle2.webp");
+  margin-bottom: 20px;
+}
+
+.power h2, .buffet h2 {
+  display: block;
+  color: white;
+  padding-top: 0;
+  text-align: center;
+  margin: 0;
+  margin-top: auto;
+  max-width: 10ch;
+  font-size: 3.5rem;
+  padding: 0;
+}
+
+.readmore{
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: var(--blue);
+  border-radius: 200px;
+  margin: auto 0 30px 0;
+  padding: 5px 15px;
+  box-shadow: 0 0 40px 0px rgba(255, 255, 255, 0.3);
+}
+
+.readmore:hover {
+    background-color: white; 
+    color: var(--blue);
+}
+
+/********** Nyhedsbrev på forside **********/
+
+.nyhed {
+    background: #f0f0f0;
+    background-image: 
+    linear-gradient(rgba(240, 240, 240, 0.9), 
+    rgba(240, 240, 240, 0.9)), url("../images/nyhedsikon.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin: 0 20px 20px 20px;
+    padding: 10px 0;
+    display: flex; 
+    align-items: center;
+    flex-direction: column;    
+}
+.nyhed h2 {
+  color: var(--blue);
+  text-align: center; 
+  font-size: 1.5rem;
+  margin: 0 auto;
+}
+.nyhed a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    background-color: var(--blue);
+    border-radius: 200px;
+    margin: auto 0; 
+    margin-top: 10px;   
+    padding: 5px 10px 5px 10px;
+    text-align: center; 
+}
+.nyhed a:hover {
+    background-color: white; 
+    color: var(--blue); 
+}
+
+/********** Footer **********/
+
+footer {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: var(--blue);
+}
+
+.kontakt,
+.adresse {
+  padding-bottom: 5px;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.kontakt {
+  padding-top: 18px;
+  margin-bottom: 20px;
+}
+
+footer h3 {
+  margin-bottom: 2px;
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+footer hr {
+  margin: 0 20px;
+  border: none;
+  border-top: 1px solid white;
+}
+footer a {
+  font-weight: 200;
+  color: rgba(245, 245, 245, 0.87);
+  font-size: 1rem;
+}
+footer p {
+  font-weight: 200;
+  color: rgba(245, 245, 245, 0.87);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/********** PowerBowling-underside **********/
+
+.powerbowl {
+  background-image: url("../images/seamwall.webp");
+  width: 100vw;
+  min-height: 80vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.powerbowl a {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: block;
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgb(138, 218, 255);
+  text-shadow:
+  0px 0 10px rgb(50, 173, 255),
+  0px 0 30px rgb(8, 197, 255),
+  0px 0 100px rgb(64, 173, 224);
+  text-decoration: none;
+  padding: 10px;
+  border: 2.5px solid rgb(138, 218, 255); 
+  border-radius: 20px;
+  box-shadow: 
+  0px 0 10px -10px rgb(135, 226, 217),
+  0px 0 100px 0px rgb(8, 197, 255);
+  background-color: rgba(8, 197, 255, 0.3);
+  letter-spacing: -2px;
+}
+.powerbowl a:hover, .powerbowl a:focus{
+  filter: hue-rotate(110deg);
+}
+.neonsign{
+  width: 250vw;
+  max-width: 550px;
+  height: auto;
+  margin: -30px -50px -50px -50px;
+}
+.poster{
+  width: 70vw;
+  max-width: 280px;
+  height: auto;
+  margin: 0px 0 30px 0;
+}
+.p1{
+  display: none;
+}
+.neoncontainer{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+#powerinfo article{
+  margin: 0 0 20px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#powerinfo h1, #powerinfo h2{
+  margin: 10px 20px 5px 20px;
+  font-size: 1.25rem;
+  color: var(--blue);
+  max-width: none;
+  text-align: center;
+}
+.infotab{
+  background-color: var(--grey);
+}
+.infotab[open] > summary{
+  border-bottom: 1px solid var(--blue);
+}
+.infotab p{
+  margin: 5px 20px;
+  text-align: center;
+}
+.infotab summary{
+  padding: 10px 20px;
+  color: var(--blue);
+  font-size: 1.4rem;
+  background-color: var(--grey);
+  text-align: center;
+  cursor: pointer;
+}
+.footerimg{
+  width: 100px;
+  opacity: 0.1;
+  display: none;
+}
+
+/********** Video powerbowling **********/
+
+.videocontainer{
+  width: 100vw;
+  max-width: 500px;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px 0px rgb(0, 0, 0);
+}
+
+#video{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.v1{
+  display: none;
+}
+
+
+/********** Fest & Events **********/
+
+#events{
+  min-height: 90vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#festevents 
+{
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%; 
+}
+.festhero{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 200, 0.02), rgba(87, 87, 172, 0.6)), url("../images/bowle2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80% 70%;
+  height: 30vw;
+  min-height: 200px;
+  max-height: 300px;
+  margin: 0 0 40px 0;
+  padding: 0;
+  border-radius: 0 0 30px 30px;
+}
+#festover
+{
+  text-align: center; 
+  color: white; 
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 40px; 
+}
+#festevents ul{
+  margin-bottom: 5px;
+}
+#festevents li{
+  margin-bottom: 12px;
+}
+.blå, .børne, .klub { 
+  font-size: 20px; 
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0; 
+  margin-bottom: 40px;
+  color: white; 
+  background-image: linear-gradient(#333e9c, #0f1972);
+  width: 320px;
+  max-width: 320px;
+  height: 300px;
+  height: fit-content;
+  border-radius: 20px; 
+  position: relative; 
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 30px -20px black;
+  
+}
+
+.infofest{
+  margin-top: auto;
+  background-color: none;
+  margin-bottom: auto;
+}
+.infofest[open] > summary{
+  border-bottom: 1px solid white;
+}
+.infofest ul{
+  margin: 15px 20px;
+  height: 11.5rem;
+  overflow-y: auto;
+}
+
+.infofest ul::-webkit-scrollbar-thumb{
+  background: white;
+}
+.infofest summary{
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.4rem;
+  background-color: none;
+  text-align: center;
+  pointer-events: none;
+  border-bottom: 1px solid white;
+}
+
+.blå::before, .børne::before, .klub::before {
+  content: ''; 
+  background-image: url("../images/kuglekegle.svg");
+  background-repeat: no-repeat; 
+  background-size: 80%; 
+  background-position: 50% 50%; 
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  opacity: 0.03; 
+  z-index: -1; 
+}
+
+.blå h2, .klub h2, .børne h2
+{
+  color: white; 
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.blå a, .klub a, .børne a  {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.0rem;
+  background-color: var(--blue);
+  margin: 10px auto;
+  border-radius: 200px; 
+  padding: 5px 10px 5px 10px; 
+  outline: 1px solid white;
+}
+.blå a:hover, .klub a:hover, .børne a:hover 
+{
+  background-color: white; 
+  color: var(--blue); 
+}
+
+/********** Nyhedsbrev underside **********/
+
+.nyhedsbrev{
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nyhed{
+  width: 90vw;
+  max-width: 750px;
+  background-color: var(--blue);
+  height: 32vw;
+  min-height: 300px;
+  max-height: 400px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+#nyhed img{
+  margin-top: 20px;
+  height: 40px;
+  width: auto;
+}
+.overnyhed{
+  margin: 10px 0;
+  padding: 0;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.undernyhed{
+  margin: 0 40px;
+  padding: 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 200;
+  text-align: center;
+}
+#email{
+  font-family: var(--halcom);
+  text-align: center; 
+  height: 30px;
+  width: 40%;
+  min-width: 200px;
+  max-width: 400px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 20px;
+}
+#email::placeholder{
+  color: var(--blue);
+  text-align: center; 
+  font-weight: 200;
+}
+#tilmeldknap
+{
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-size: 1.1rem;
+  background-color: var(--blue);
+  border-radius: 20px; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px 5px 5px 5px;
+  display: flex; 
+  justify-content: center;
+  outline: 1px solid white;
+}
+
+#tilmeldknap:hover {
+  background-color: white; 
+  color: var(--blue); 
+}
+
+/********** Media Queries **********/
+
+@media screen and (min-width: 500px){
+  
+  /********** Footer **********/
+  
+  footer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .kontakt,
+  .adresse {
+    padding-bottom: 5px;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+
+  .kontakt, .adresse {
+    padding-top: 18px;
+    margin-bottom: 0px;
+    min-width: 250px;
+    max-width: 350px;
+  }
+
+  footer h3 {
+    margin-bottom: 2px;
+    margin-top: 0;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  footer hr {
+    margin: 0 20px;
+    border: none;
+    border-top: 1px solid white;
+  }
+  footer a {
+    font-weight: 200;
+    color: rgba(245, 245, 245, 0.87);
+    font-size: 1rem;
+  }
+  footer p {
+    font-weight: 200;
+    color: rgba(245, 245, 245, 0.87);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+}
+
+@media screen and (min-width: 600px){
+  /********** Footer billede gøres synligt **********/
+  .footerimg{
+    display: block;
+  }
+  /********** Forside **********/
+  #forside h1 {
+    color: rgb(255, 255, 255);
+    margin-top: 0;
+    text-align: center;
+    margin: auto 0;
+    max-width: none;
+    font-size: 2.8rem;
+  }
+  .container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100vw;
+    max-width: 1000px;
+  }
+  .power, .buffet{
+    margin: 0 20px 40px 20px;
+  }
+  
+}
+@media screen and (max-width: 755px) {
+
+  /********** Powerbowling **********/
+  #powerinfo article{
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  #powerinfo h1, #powerinfo h2, #powerinfo p{
+    text-align: left;
+  }
+}
+
+
+@media screen and (min-width: 840px) {
+  /********** Burgermenu fjernes og erstattes af desktop menulinjen **********/
+  .burger{
+    display: none;
+  }
+  .logo {
+    display: block;
+    margin: 15px 0px 15px 20px;
+    height: 50px;
+    padding: 0;
+  }
+  .widemenu{
+    display: flex;
+  }
+  .menupunkter{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .menupunkter a{
+    border-radius: 10px 10px 0px 0;
+    z-index: 10;
+  }
+  .menupunkter::after{
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: -100%;
+    background-color: var(--blue);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .widedropmenu{
+    display: none;
+    position: absolute;
+    top: 180%;
+    background-color: var(--blue);
+    border-radius: 0 0px 10px 10px;
+    z-index: 2;
+  }
+  .widedropdown{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+    overflow-x: hidden;
+  }
+  .widedropdown li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .widedropdown li a{
+    position: relative;
+    color: white;
+    border-radius: 0;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    font-weight: 200;
+    padding: 5px 10px;
+    z-index: 120;
+    margin: 0;
+  }
+  .widedropdown li a::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 500%;
+    height: 100%;
+    z-index: -1;
+    
+  }
+  .widedropdown li a:hover{
+    color: var(--blue);
+    background-color: white;
+  }
+  .menupunkter:hover > .widedropmenu{
+    display: block;
+  }
+  .menupunkter:hover::after{
+    display: block;
+  }
+  .widedropdown li a:hover::before{
+    background-color: white;
+  }
+
+  /********** PowerBowling-underside **********/
+
+  .powerbowl {
+    background-image: url("../images/seamwall.webp");
+    background-repeat:repeat;
+    background-size: 60%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .powerbowl a {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    color: rgb(138, 218, 255);
+    text-shadow:
+    0px 0 10px rgb(50, 173, 255),
+    0px 0 30px rgb(8, 197, 255),
+    0px 0 100px rgb(64, 173, 224);
+    text-decoration: none;
+    padding: 10px;
+    border: 2.5px solid rgb(138, 218, 255); 
+    border-radius: 20px;
+    box-shadow: 
+    0px 0 10px -10px rgb(135, 226, 217),
+    0px 0 100px 0px rgb(8, 197, 255);
+    background-color: rgba(8, 197, 255, 0.3);
+    letter-spacing: -2px;
+  }
+  .powerbowl a:hover, .powerbowl a:focus{
+    filter: hue-rotate(110deg);
+  }
+  .neonsign{
+    width: 250vw;
+    max-width: 600px;
+    height: auto;
+    margin: -50px -170px -50px -160px;
+  }
+  .poster{
+    width: 70vw;
+    max-width: 250px;
+    height: auto;
+    margin: 0px 0 30px 0;
+  }
+  .p1{
+    display: block;
+  }
+  .p2{
+    display: none;
+  }
+  /********** Video powerbowling **********/
+
+  .videocontainer{
+    width: 100vw;
+    max-width: 500px;
+    height: auto;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: -50px;
+    box-shadow: 0 0 20px 0px rgb(0, 0, 0);
+  }
+
+  #video{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  /********** forside h1 ændrer størrelse **********/
+  
+  #forside h1{
+    font-size: 3rem;
+  }
+  
+}
+
+@media screen and (min-width: 1000px) {
+  
+  /********** Navigation **********/
+
+  .navbar{
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+  } 
+
+  /********** NYHEDSBREV underside **********/
+  
+  .overnyhed {
+    font-size: 2.3rem;
+  }
+  .undernyhed {
+    font-size: 1.4rem; 
+  }
+  #nyhed img{
+    margin-top: 20px;
+    height: 60px;
+    width: auto;
+  }
+  #forside h1{
+    font-size: 4rem;
+  }
+
+} 
+
+@media screen and (min-width: 1350px){
+  /********** Power bowling **********/
+  .videocontainer{
+    width: 100vw;
+    max-width: 600px;
+    height: auto;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    
+    box-shadow: 0 0 20px 0px rgb(0, 0, 0);
+  }
+  .neoncontainer{
+    display: flex;
+    align-items: center;
+    margin: 80px auto 20px auto;
+    width: 90%;
+  }
+  .v2{
+    display: none;
+  }
+  .v1{
+    display: block;
+    margin: 0 8vw;
+  }
+  .powerbowl a {
+    margin-top: 0px;
+    margin-bottom: 120px;
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    color: rgb(138, 218, 255);
+    text-shadow:
+    0px 0 10px rgb(50, 173, 255),
+    0px 0 30px rgb(8, 197, 255),
+    0px 0 100px rgb(64, 173, 224);
+    text-decoration: none;
+    padding: 10px;
+    border: 2.5px solid rgb(138, 218, 255); 
+    border-radius: 20px;
+    box-shadow: 
+    0px 0 10px -10px rgb(135, 226, 217),
+    0px 0 100px 0px rgb(8, 197, 255);
+    background-color: rgba(8, 197, 255, 0.3);
+    letter-spacing: -2px;
+  }
+}
